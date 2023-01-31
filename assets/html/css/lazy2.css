@@ -1,0 +1,232 @@
+table {
+  /* 電卓のサイズ */
+  background-color: #ffffff;
+  width: 300px;
+  height: 400px;
+  /* インライン要素を中央に配置 */
+  text-align: center;
+  /* 余白調整 */
+  padding: 8px;
+  margin: 20px;
+}
+
+body {
+  height: 900px;
+}
+
+.menu {
+
+  padding-left: 0 !important ;
+  position: fixed;
+  left: 0;
+ /*  ページの一番下に固定する */
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+.menu li {
+  border: 1px solid gray;
+  border-right: none;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+  list-style: none;
+  text-align: center;
+
+}
+
+.ver{
+  border-bottom: 2px solid rgb(0, 255, 229);
+}
+
+h1{
+  color: rgb(0, 0, 0);
+}
+p{
+  color: rgb(0, 0, 0);
+}
+.menu a {
+  text-decoration: none;
+  color: #000000;
+}
+.menu a span {
+  display: block;
+  font-size: 4px;
+}
+/* PCでは非表示にする */
+@media(min-width: 768px) {
+  .bottom-menu {
+    display: none;
+  }
+}
+
+input {
+  /* ボタンのサイズ */
+  width: 50px;
+  height: 50px;
+  /* ボタンの文字サイズ */
+  font-size: x-large;
+  /* 数字部分の背景色 */
+  background-color: #b2afaf;
+  /* ボタンの詳細設定 */
+  border: none;
+  border-radius: 20px;
+  /* クリック時の黒枠を消す */
+  outline: none;
+}
+
+/* ディスプレイの詳細設定 */
+.display {
+  width: 250px;
+  text-align: right; 
+  background: #ffffff;
+  border-bottom: solid #00ffd5 5px;
+  border-radius: 5px;
+  color: #000000;
+  font-size: 45px;
+}
+
+/* 背景色を上書き設定 */
+.operator {
+  background-color: #8bfef4;
+}
+.operator2 {
+  background-color: #d2d2d1;
+  font-size: small;
+}
+.equal {
+  background-color: #c0f471;
+}
+
+/* カーソルを上に乗せた時に色を濃くする */
+input:hover {
+  background: #bdf9ce;
+}
+.display:hover {
+  background: #ffffff; 
+}
+.space:hover {
+  background: #ffffff;
+}
+.equal:hover {
+  background: #22f90e;
+}
+.operator:hover {
+  background: #0957fe;
+}
+.operator2:hover {
+  background: #32a6ff;
+}
+
+/* クリック時に色を濃くする */
+input:active {
+  background:  #b3fdad;
+}
+.operator:active {
+  background: #0936fe;
+}
+.operator2:active {
+  background: #32a6ff;
+}
+.equal:active {
+  background: #0ef964;
+}
+
+.cp_ipselect {
+  color:rgb(0, 0, 0);
+  background-color: #ffffff;
+  position: relative;
+  width: 90%;
+  margin: 2em auto;
+  text-align: center;
+}
+.cp_sl06 {
+  background-color: #ffffff;
+  color:rgb(0, 0, 0);
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.cp_sl06:focus {
+  background-color: #ffffff;
+  outline: none;
+  border-bottom: 1px solid rgb(0, 0, 0);
+}
+.cp_ipselect .cp_sl06 {
+  appearance: none;
+  -webkit-appearance:none
+}
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+.cp_ipselect:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(0, 0, 0);
+  pointer-events: none;
+}
+.cp_sl06_selectlabel {
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+.cp_sl06:focus ~ .cp_sl06_selectlabel, .cp_sl06:valid ~ .cp_sl06_selectlabel {
+  color: #c6ff09;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+.cp_sl06_selectbar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #c6ff09;
+  transition: 0.2s ease all;
+}
+.cp_sl06_selectbar:before {
+  left: 50%;
+}
+.cp_sl06_selectbar:after {
+  right: 50%;
+}
+.cp_sl06:focus ~ .cp_sl06_selectbar:before, .cp_sl06:focus ~ .cp_sl06_selectbar:after {
+  width: 50%;
+}
+.cp_sl06_highlight {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}

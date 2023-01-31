@@ -1,0 +1,236 @@
+table {
+  /* 電卓のサイズ */
+  background-color: #000000;
+  width: 300px;
+  height: 400px;
+  /* インライン要素を中央に配置 */
+  text-align: center;
+  /* 余白調整 */
+  padding: 8px;
+  margin: 20px;
+}
+
+body{
+  background-color: #000000;
+}
+
+body {
+  height: 900px;
+}
+
+.menu {
+
+  padding-left: 0 !important ;
+  position: fixed;
+  left: 0;
+ /*  ページの一番下に固定する */
+  bottom: 0;
+  background: black;
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+align-items: center;
+}
+.menu li {
+  border: 1px solid gray;
+  border-right: none;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 5px;
+  list-style: none;
+  text-align: center;
+
+}
+
+.ver{
+  border-bottom: 2px solid rgb(255, 193, 59);
+}
+
+h1{
+  color: white;
+}
+p{
+  color: white;
+}
+.menu a {
+  text-decoration: none;
+  color: #ffffff;
+}
+.menu a span {
+  display: block;
+  font-size: 4px;
+}
+/* PCでは非表示にする */
+@media(min-width: 768px) {
+  .bottom-menu {
+    display: none;
+  }
+}
+
+input {
+  /* ボタンのサイズ */
+  width: 67px;
+  height: 67px;
+  /* ボタンの文字サイズ */
+  font-size: x-large;
+  /* 数字部分の背景色 */
+  background-color: #f7f7f7;
+  /* ボタンの詳細設定 */
+  border: none;
+  border-radius: 20px;
+  /* クリック時の黒枠を消す */
+  outline: none;
+}
+
+/* ディスプレイの詳細設定 */
+.display {
+  width: 250px;
+  text-align: right; 
+  background: #000000;
+  border-bottom: solid #ffd000 5px;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 45px;
+}
+
+/* 背景色を上書き設定 */
+.operator {
+  background-color: #dbfe8b;
+}
+.operator2 {
+  background-color: #d3d3d2;
+}
+.equal {
+  background-color: #f4cf71;
+}
+
+/* カーソルを上に乗せた時に色を濃くする */
+input:hover {
+  background: #f7ffd2;
+}
+.display:hover {
+  background: #ffffff; 
+}
+.space:hover {
+  background: #ffffff;
+}
+.equal:hover {
+  background: #f9970e;
+}
+.operator:hover {
+  background: #eefe09;
+}
+.operator2:hover {
+  background: #32a6ff;
+}
+
+/* クリック時に色を濃くする */
+input:active {
+  background:  #f7ffd2;
+}
+.operator:active {
+  background: #eefe09;
+}
+.operator2:active {
+  background: #32a6ff;
+}
+.equal:active {
+  background: #f9970e;
+}
+
+.cp_ipselect {
+  color:rgb(255, 255, 255);
+  background-color: #000000;
+  position: relative;
+  width: 90%;
+  margin: 2em auto;
+  text-align: center;
+}
+.cp_sl06 {
+  background-color: #000000;
+  color:rgb(255, 255, 255);
+  position: relative;
+  font-family: inherit;
+  background-color: transparent;
+  width: 100%;
+  padding: 10px 10px 10px 0;
+  font-size: 18px;
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.cp_sl06:focus {
+  background-color: #000000;
+  outline: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+}
+.cp_ipselect .cp_sl06 {
+  appearance: none;
+  -webkit-appearance:none
+}
+.cp_ipselect select::-ms-expand {
+  display: none;
+}
+.cp_ipselect:after {
+  position: absolute;
+  top: 18px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  padding: 0;
+  content: '';
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid rgb(255, 255, 255);
+  pointer-events: none;
+}
+.cp_sl06_selectlabel {
+  color: rgb(255, 255, 255);
+  font-size: 18px;
+  font-weight: normal;
+  position: absolute;
+  pointer-events: none;
+  left: 0;
+  top: 10px;
+  transition: 0.2s ease all;
+}
+.cp_sl06:focus ~ .cp_sl06_selectlabel, .cp_sl06:valid ~ .cp_sl06_selectlabel {
+  color: #c6ff09;
+  top: -20px;
+  transition: 0.2s ease all;
+  font-size: 14px;
+}
+.cp_sl06_selectbar {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.cp_sl06_selectbar:before, .cp_sl06_selectbar:after {
+  content: '';
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: #c6ff09;
+  transition: 0.2s ease all;
+}
+.cp_sl06_selectbar:before {
+  left: 50%;
+}
+.cp_sl06_selectbar:after {
+  right: 50%;
+}
+.cp_sl06:focus ~ .cp_sl06_selectbar:before, .cp_sl06:focus ~ .cp_sl06_selectbar:after {
+  width: 50%;
+}
+.cp_sl06_highlight {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+}
